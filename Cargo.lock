@@ -639,6 +639,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "rust-download-large-file"
+version = "0.1.0"
+dependencies = [
+ "futures-util",
+ "indicatif",
+ "reqwest",
+ "tokio",
+]
+
+[[package]]
 name = "ryu"
 version = "1.0.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -776,16 +786,6 @@ checksum = "633c1a546cee861a1a6d0dc69ebeca693bf4296661ba7852b9d21d159e0506df"
 dependencies = [
  "libc",
  "winapi",
-]
-
-[[package]]
-name = "test__rust-download-large-file"
-version = "0.1.0"
-dependencies = [
- "futures-util",
- "indicatif",
- "reqwest",
- "tokio",
 ]
 
 [[package]]

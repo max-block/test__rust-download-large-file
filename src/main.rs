@@ -29,7 +29,6 @@ pub async fn download_file(client: &Client, url: &str, path: &str) -> Result<(),
     let mut downloaded: u64 = 0;
     let mut stream = res.bytes_stream();
 
-    
     while let Some(item) = stream.next().await {
         let chunk = item.or(Err(format!("Error while downloading file")))?;
         file.write_all(&chunk)
@@ -45,5 +44,11 @@ pub async fn download_file(client: &Client, url: &str, path: &str) -> Result<(),
 
 #[tokio::main]
 async fn main() {
-    download_file(&Client::new(), "https://releases.ubuntu.com/20.04/ubuntu-20.04.4-desktop-amd64.iso", "tmp/ubuntu.iso").await.unwrap();
+    download_file(
+        &Client::new(),
+        "https://releases.ubuntu.com/20.04/ubuntu-20.04.4-desktop-amd64.iso",
+        "tmp/ubuntu.iso",
+    )
+    .await
+    .unwrap();
 }
